@@ -311,7 +311,7 @@ const SuccessModal = ({ purchase, onClose }) => {
             <div className="flex flex-wrap gap-2 justify-center">
               {purchase.tickets.slice(0, 10).map((ticket) => (
                 <span key={ticket} className="bg-purple-600 text-white px-2 py-1 rounded text-sm font-bold">
-                  {ticket.toString().padStart(4, '0')}
+                  {ticket.toString().padStart(6, '0')}
                 </span>
               ))}
               {purchase.tickets.length > 10 && (
