@@ -317,7 +317,7 @@ def main():
         ("Get User Purchases", tester.test_get_user_purchases),
         ("Get Raffle Purchases", tester.test_get_raffle_purchases),
         ("Get Top Buyers", tester.test_get_top_buyers),
-        ("Get Daily Top Buyers", tester.test_daily_top_buyers),
+        ("Get Daily Top Buyers", tester.test_get_daily_top_buyers),
         ("Get Winners", tester.test_get_winners),
         ("Create Winner", tester.test_create_winner),
         ("Get Statistics", tester.test_get_stats)
