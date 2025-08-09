@@ -488,6 +488,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home user={user} setUser={setUser} />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/minha-area" element={<UserArea user={user} />} />
         </Routes>
       </BrowserRouter>
     </div>
