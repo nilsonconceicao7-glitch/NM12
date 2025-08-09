@@ -107,9 +107,9 @@ const PurchaseItem = ({ purchase, raffle }) => {
             {purchase.tickets.slice(0, 20).map((ticket) => (
               <span 
                 key={ticket} 
-                className="bg-purple-600 text-white px-2 py-1 rounded text-sm font-bold min-w-[50px] text-center"
+                className="bg-purple-600 text-white px-2 py-1 rounded text-sm font-bold min-w-[60px] text-center"
               >
-                {ticket.toString().padStart(4, '0')}
+                {ticket.toString().padStart(6, '0')}
               </span>
             ))}
             {purchase.tickets.length > 20 && (
