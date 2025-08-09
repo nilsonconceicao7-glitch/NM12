@@ -39,14 +39,22 @@ const Header = ({ user, setUser }) => {
           
           <div className="flex items-center space-x-4">
             {user ? (
-              <div className="flex items-center space-x-2">
-                <span className="text-sm">Olá, {user.name || user.phone}</span>
-                <button 
-                  onClick={() => setUser(null)}
-                  className="text-xs bg-white/20 px-2 py-1 rounded"
-                >
-                  Sair
-                </button>
+              <div className="flex items-center space-x-4">
+                <Link to="/minha-area" className="text-sm hover:text-gray-300">
+                  Minha Área
+                </Link>
+                <Link to="/admin" className="text-sm hover:text-gray-300">
+                  Admin
+                </Link>
+                <div className="flex items-center space-x-2">
+                  <span className="text-sm">Olá, {user.name || user.phone}</span>
+                  <button 
+                    onClick={() => setUser(null)}
+                    className="text-xs bg-white/20 px-2 py-1 rounded"
+                  >
+                    Sair
+                  </button>
+                </div>
               </div>
             ) : (
               <button 
