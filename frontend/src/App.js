@@ -349,12 +349,14 @@ const SuccessModal = ({ purchase, onClose }) => {
 
 const Home = ({ user, setUser }) => {
   const [raffles, setRaffles] = useState([]);
+  const [winners, setWinners] = useState([]);
   const [selectedRaffle, setSelectedRaffle] = useState(null);
   const [successPurchase, setSuccessPurchase] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadRaffles();
+    loadWinners();
   }, []);
 
   const loadRaffles = async () => {
@@ -363,6 +365,15 @@ const Home = ({ user, setUser }) => {
       setRaffles(response.data);
     } catch (error) {
       console.error("Erro ao carregar rifas:", error);
+    }
+  };
+
+  const loadWinners = async () => {
+    try {
+      const response = await axios.get(`${API}/winners`);
+      setWinners(response.data);
+    } catch (error) {
+      console.error("Erro ao carregar ganhadores:", error);
     } finally {
       setLoading(false);
     }
