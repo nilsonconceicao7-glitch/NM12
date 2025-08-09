@@ -102,7 +102,7 @@ class Winner(BaseModel):
 
 def generate_ticket_numbers(raffle_id: str, quantity: int, existing_tickets: List[int]) -> List[int]:
     """Gera números aleatórios disponíveis para a rifa"""
-    available = [i for i in range(1, 10001) if i not in existing_tickets]
+    available = [i for i in range(1, 100001) if i not in existing_tickets]
     if len(available) < quantity:
         raise HTTPException(status_code=400, detail="Não há números suficientes disponíveis")
     return random.sample(available, quantity)
