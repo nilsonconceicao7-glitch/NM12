@@ -456,6 +456,42 @@ const Home = ({ user, setUser }) => {
         </div>
       </section>
       
+      {/* Winners Section */}
+      {winners.length > 0 && (
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+              🎉 Últimos Ganhadores
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {winners.slice(0, 6).map((winner) => (
+                <div key={winner.id} className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">🏆</div>
+                    <h3 className="font-bold text-gray-800 mb-1">
+                      {winner.user_phone}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-2">
+                      {winner.raffle_title}
+                    </p>
+                    <p className="text-lg font-bold text-yellow-600">
+                      {winner.prize_name}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-2">
+                      Número: {winner.winning_number.toString().padStart(4, '0')}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {new Date(winner.date).toLocaleDateString('pt-BR')}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+      
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
