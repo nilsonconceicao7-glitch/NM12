@@ -34,7 +34,7 @@ const Header = ({ user, setUser }) => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="text-2xl font-bold">🎲</div>
-            <h1 className="text-2xl font-bold">MEGA12</h1>
+            <Link to="/" className="text-2xl font-bold hover:text-gray-300">MEGA12</Link>
           </div>
           
           <div className="flex items-center space-x-4">
